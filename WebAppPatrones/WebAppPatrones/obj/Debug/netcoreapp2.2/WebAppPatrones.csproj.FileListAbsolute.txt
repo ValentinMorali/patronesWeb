@@ -1,0 +1,45 @@
+C:\Users\Trend\Desktop\backup front end ASP a Angular\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.deps.json
+C:\Users\Trend\Desktop\backup front end ASP a Angular\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.runtimeconfig.json
+C:\Users\Trend\Desktop\backup front end ASP a Angular\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.runtimeconfig.dev.json
+C:\Users\Trend\Desktop\backup front end ASP a Angular\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.dll
+C:\Users\Trend\Desktop\backup front end ASP a Angular\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.pdb
+C:\Users\Trend\Desktop\backup front end ASP a Angular\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.csprojAssemblyReference.cache
+C:\Users\Trend\Desktop\backup front end ASP a Angular\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.csproj.CoreCompileInputs.cache
+C:\Users\Trend\Desktop\backup front end ASP a Angular\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.RazorAssemblyInfo.cache
+C:\Users\Trend\Desktop\backup front end ASP a Angular\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.RazorAssemblyInfo.cs
+C:\Users\Trend\Desktop\backup front end ASP a Angular\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.AssemblyInfoInputs.cache
+C:\Users\Trend\Desktop\backup front end ASP a Angular\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.AssemblyInfo.cs
+C:\Users\Trend\Desktop\backup front end ASP a Angular\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.RazorTargetAssemblyInfo.cache
+C:\Users\Trend\Desktop\backup front end ASP a Angular\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.dll
+C:\Users\Trend\Desktop\backup front end ASP a Angular\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.pdb
+C:\1_Siderca\Projects\Patrones\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.deps.json
+C:\1_Siderca\Projects\Patrones\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.runtimeconfig.json
+C:\1_Siderca\Projects\Patrones\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.runtimeconfig.dev.json
+C:\1_Siderca\Projects\Patrones\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.dll
+C:\1_Siderca\Projects\Patrones\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.pdb
+C:\1_Siderca\Projects\Patrones\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.csprojAssemblyReference.cache
+C:\1_Siderca\Projects\Patrones\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.csproj.CoreCompileInputs.cache
+C:\1_Siderca\Projects\Patrones\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.RazorAssemblyInfo.cache
+C:\1_Siderca\Projects\Patrones\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.RazorAssemblyInfo.cs
+C:\1_Siderca\Projects\Patrones\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.AssemblyInfoInputs.cache
+C:\1_Siderca\Projects\Patrones\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.AssemblyInfo.cs
+C:\1_Siderca\Projects\Patrones\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.RazorTargetAssemblyInfo.cache
+C:\1_Siderca\Projects\Patrones\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.dll
+C:\1_Siderca\Projects\Patrones\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.pdb
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\appsettings.json
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.deps.json
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.runtimeconfig.json
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.runtimeconfig.dev.json
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.dll
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\bin\Debug\netcoreapp2.2\WebAppPatrones.pdb
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.csprojAssemblyReference.cache
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.AssemblyInfoInputs.cache
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.AssemblyInfo.cs
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.csproj.CoreCompileInputs.cache
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.RazorAssemblyInfo.cache
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.RazorAssemblyInfo.cs
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.RazorTargetAssemblyInfo.cache
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.dll
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.pdb
+C:\patrones\patronesSidercaWeb\WebAppPatrones\WebAppPatrones\obj\Debug\netcoreapp2.2\WebAppPatrones.genruntimeconfig.cache
