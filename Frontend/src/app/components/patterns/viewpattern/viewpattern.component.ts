@@ -469,7 +469,7 @@ opendetails(id: number,codigo: string) {
 
 
     viewPDF( pdf ) {
-      let pdfurl = `../../../../../../../../assets/${ pdf }.pdf`;
+      let pdfurl = `../../../../../../../../assets/certificados/${ pdf }.pdf`;
       window.open(pdfurl, '_blank');
       // console.log(pdfurl);
     }
