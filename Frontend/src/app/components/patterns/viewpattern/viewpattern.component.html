@@ -256,8 +256,11 @@
           <input class="ui-button.ui-state-active" style='width:150px; height:50px' type="button" value="Ir al inicio" onClick="window.location.href='../default.asp'" id=button1 name=button1>
 
           <div class="form-group col-2">
-            <input type="submit" class="btn btn-outline-primary" style='width:150px; height:50px' value="Ver certificado" (click)="pdf()"> &nbsp;
-          </div>
+            <button class="btn btn-outline-primary" style='width:150px; height:50px' (click)="viewPDF( this.code )">
+              Ver certificado
+            </button>
+            </div>
         </div>
 
+        <!-- &nbsp; iba al final del input submit del ver certificado -->
 

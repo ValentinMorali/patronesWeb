@@ -7,6 +7,7 @@ import { ModifypatternComponent } from '../../modals/modifypattern/modifypattern
 import { Globals } from 'src/app/global';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 
+
 class historytable {
   constructor(
     public pasillo?:number, 
@@ -341,7 +342,6 @@ else{
 
 
 
-
 //////////////////////////////////////////////////////////////////////////////////////
 
 opendetails(id: number,codigo: string) {
@@ -468,5 +468,12 @@ opendetails(id: number,codigo: string) {
 
 
 
+    viewPDF( param ) {
+      console.log("hola");
+      let pdfurl = `Hola como estas ${ param }`;
+      // window.open("../../../../../../../../assets/Certificados/1A01.pdf", '_blank');
+      console.log(pdfurl);
+    }
 
+    // }
 }//termino clase
