@@ -468,11 +468,10 @@ opendetails(id: number,codigo: string) {
 
 
 
-    viewPDF( param ) {
-      console.log("hola");
-      let pdfurl = `Hola como estas ${ param }`;
-      // window.open("../../../../../../../../assets/Certificados/1A01.pdf", '_blank');
-      console.log(pdfurl);
+    viewPDF( pdf ) {
+      let pdfurl = `../../../../../../../../assets/${ pdf }.pdf`;
+      window.open(pdfurl, '_blank');
+      // console.log(pdfurl);
     }
 
     // }
