@@ -33,10 +33,17 @@
                     <!-- con la Expr regular pattern="[0-9]+" se filtran numeros del input -->
                 </div>
 
-                <div class="form-group col-2" style="margin:0">
+                <!-- <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Tol(%)</label>
                     <input type="text" formControlName="tol1" class="form-control" [(ngModel)]="tol1value" (change)="Verificarnum(2)" />
+                </div> esto iba-->
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Tol(%)</label>
+                    <input type="text" formControlName="tol1" class="form-control" minlength="0" maxlength="2"/>
                 </div>
+
+
 
                 <div class="form-group col-4" style="margin:0">
                     <label style="padding:0;margin:0">Acero</label>
@@ -57,9 +64,14 @@
                     <input type="text" placeholder="Ingrese un nro" formControlName="thickness" class="form-control" [(ngModel)]="thicknessvalue" (change)="Verificarnum(6)" />
                 </div>
 
-                <div class="form-group col-2" style="margin:0">
+                <!-- <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Tol(%)</label>
                     <input type="text" formControlName="tol2" class="form-control" [(ngModel)]="tol2value" (change)="Verificarnum(7)" />
+                </div> -->
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Tol(%)</label>
+                    <input type="text" formControlName="tol2" class="form-control" minlength="0" maxlength="2"/>
                 </div>
 
                 <div class="form-group col-4" style="margin:0">
@@ -82,15 +94,47 @@
                     <input type="text" placeholder="Ingrese un nro" formControlName="length" class="form-control" [(ngModel)]="lengthvalue" (change)="Verificarnum(5)" />
                 </div>
 
-                <div class="form-group col-2" style="margin:0">
+                <!-- <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Tol(%)</label>
                     <input type="text" formControlName="tol3" class="form-control" [(ngModel)]="tol3value" (change)="Verificarnum(8)" />
+                </div> -->
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Tol(%)</label>
+                    <input type="text" formControlName="tol3" class="form-control" minlength="0" maxlength="2"/>
                 </div>
 
+
+
+
+
+
+
+
+
+<!-- 
                 <div class="form-group col-4" style="margin:0">
                     <label style="padding:0;margin:0">Trat. Térmico</label>
-                    <input type="text" placeholder="Escriba aqui" formControlName="heat_treatment" class="form-control" />
-                </div>
+                    <input type="text" placeholder="Seleccione uno" formControlName="heat_treatment" class="form-control" />
+                </div> -->
+
+                <div class="form-group col-4" style="margin:0">
+                        <label style="padding:0;margin:0"> Trat. térmico</label>
+                        <div>
+                            <select  formControlName="heat_treatment" class="form-control">
+                                <OPTION VALUE="0">SI</OPTION>
+                                <OPTION VALUE="1">NO</OPTION>
+                              </select>
+                                  </div>
+                    </div>
+
+
+                   
+
+
+
+
+
 
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Expediente</label>

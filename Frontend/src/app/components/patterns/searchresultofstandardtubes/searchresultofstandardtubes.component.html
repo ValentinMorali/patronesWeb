@@ -2,7 +2,7 @@
 
 
 
-<table mat-table matSort   [dataSource]="dataSource"  class="mat-elevation-z12" (matSortChange)="sortData($event)" >
+<table maxrows="5" mat-table matSort   [dataSource]="dataSource"  class="mat-elevation-z12" (matSortChange)="sortData($event)" >
 
     <!-- Position Column -->
     <ng-container  matColumnDef="cliente"  >
