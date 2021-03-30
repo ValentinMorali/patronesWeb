@@ -227,6 +227,8 @@ this.fActivarAlerta=false;
   this.isexisting=false;
   this.isvirgin=true;
 
+
+
 // aca falta el usuario que esta harcode!!!!!!!!!
   var url1 = this.globals.baseUrl + '/Lineas/GetPlantLinea/t75648';
 //alert(url1)
@@ -247,7 +249,7 @@ this.fActivarAlerta=false;
 var url1 = this.globals.baseUrl + '/Tipos/GetTubeTypes/t75648/'+ 1;
 this.httpClient.get(url1).subscribe((res: any[]) => {
   this.lista2=res;
-  console.log(this.lista2);
+  console.log('lista2: ', this.lista2);
 });
 
 // select id, Nombre from Tipos
@@ -294,7 +296,9 @@ this.httpClient.get(url1).subscribe((res: any[]) => {
   this.listaaux[0].check=true;
   }
 
- console.log(  this.listaaux)
+  
+
+// console.log(  this.listaaux)
 
 
 
@@ -327,6 +331,8 @@ if(this.listaaux[0].notify_auditor=="SI"){ // lo hago porque el selector se pone
 }else{
   var n_a="1";
 }
+
+
 
 //////
 if(this.listaaux[0].heat_treatment=="SI"){ // lo hago porque el selector se pone por "value" que es un id de 0 a cantidad de elementos
@@ -763,12 +769,11 @@ async GetLastIdPedido()	{
   await this.httpClient.get(url1).toPromise().then(value =>{
     //console.log(value);
     this.IdPedido=value;
-   /// console.log( this.IdPedido);
+    // console.log('IdPedido: ' ,this.IdPedido);
 
     if(isNull(this.IdPedido)){
       this.IdPedido=0;
     }
-
 
    });
   
@@ -2065,7 +2070,10 @@ this.httpClient.get(url1).subscribe((res: any[]) => {
   
 
 
-
+  cambiarBoolean() {
+    console.log("cambiarboolean");
+    
+  }
 
 }//termina
 

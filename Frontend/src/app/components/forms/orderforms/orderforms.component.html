@@ -135,7 +135,7 @@
 
 
     <div class="card m-3">
-        <h5 class="card-header" style="background-color: #CECEF6">Características del tubo virgen</h5>
+        <h5 class="card-header" style="background-color: #CECEF6">Características del nuevo tubo virgen</h5>
         <div class="card-body" style="background-color:#F5A9E1">
 
             <div class="form-row" style="padding:0;margin:0">
@@ -147,27 +147,42 @@
 
             </div>
 
+
+            <!-- <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col" style="margin:0">
+                    <input 
+                        class="ui-button.ui-state-active" 
+                        style='width:150px; height:50px' 
+                        type="button" 
+                        value="A partir de un tubo virgen"
+                        formControlName="virgin_tube"/>
+                </div>
+
+            </div> -->
+
+
+
             <!--   sasdasddad -->
 
             <div class="form-row" style="padding:0;margin:0" *ngIf="isvirgin">
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">Diámetro [mm]</label>
-                    <input type="text" formControlName="diam" class="form-control" [(ngModel)]="diamvalue" (change)="checknum(1)" />
+                    <input type="text" formControlName="diam" class="form-control" [(ngModel)]="diamvalue" (change)="checknum(1)" required />
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Grado</label>
-                    <input type="text" formControlName="degree" class="form-control" />
+                    <input type="text" formControlName="degree" class="form-control" required/>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Ciclo</label>
-                    <input type="number" [style.background-color]="cyclecolor" [(ngModel)]="cyclevalue" formControlName="cycle" class="form-control" (change)="checknum(2)" />
+                    <input type="number" [style.background-color]="cyclecolor" [(ngModel)]="cyclevalue" formControlName="cycle" class="form-control" (change)="checknum(2)" required/>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
 
-                    <button type="submit" class="btn btn-primary mr-1" value="broker" id="brokerboton" (click)="broker()">Broker</button>
+                    <button type="submit" class="btn btn-outline-primary" style='width:100px; height:40px' value="broker" id="brokerboton" (click)="broker()">Broker</button>
 
                 </div>
 
@@ -179,17 +194,17 @@
             <div class="form-row" style="padding:0;margin:0" *ngIf="isvirgin">
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">Espesor [mm]</label>
-                    <input type="text" formControlName="thickness" class="form-control" [(ngModel)]="thicknessvalue" (change)="checknum(3)" />
+                    <input type="text" formControlName="thickness" class="form-control" [(ngModel)]="thicknessvalue" (change)="checknum(3)" required/>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Acero</label>
-                    <input type="text" formControlName="steel" class="form-control" />
+                    <input type="text" formControlName="steel" class="form-control" required/>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Colada</label>
-                    <input [style.background-color]="steel_castingcolor" type="text" [(ngModel)]="steel_castingvalue" formControlName="steel_casting" (change)="checknum(4)" class="form-control" />
+                    <input [style.background-color]="steel_castingcolor" type="text" [(ngModel)]="steel_castingvalue" formControlName="steel_casting" (change)="checknum(4)" class="form-control" required/>
                 </div>
 
             </div>
@@ -201,13 +216,13 @@
             <div class="form-row" style="padding:0;margin:0" *ngIf="isvirgin">
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">Longitud [mm]</label>
-                    <input [style.background-color]="lengthcolor" type="text" [(ngModel)]="lengthvalue" formControlName="length" value=0 class="form-control" (change)="checknum(5)" />
+                    <input [style.background-color]="lengthcolor" type="text" [(ngModel)]="lengthvalue" formControlName="length" value=0 class="form-control" (change)="checknum(5)" required/>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Trat. Térmico</label>
 
-                    <select [style.background-color]="heat_treatmentcolor" formControlName="heat_treatment" class="form-control">
+            <select [style.background-color]="heat_treatmentcolor" formControlName="heat_treatment" class="form-control" required>
               <OPTION VALUE="0">SI</OPTION>
               <OPTION VALUE="1">NO</OPTION>
             </select>
@@ -215,7 +230,7 @@
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Expediente</label>
-                    <input type="text" formControlName="record" class="form-control" />
+                    <input type="text" formControlName="record" class="form-control" required/>
                 </div>
 
             </div>

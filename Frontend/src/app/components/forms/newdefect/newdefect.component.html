@@ -226,7 +226,7 @@
                         <td   *ngIf="ro.Letra=='xxxx'" >&nbsp;&nbsp;&nbsp;No se ha agregado ningún defecto. Seleccione un tipo de defecto, complete sus atributos y haga clic en Crear defecto para comenzar a agregar defectos. Una vez que haya cargado todos los defectos que necesita, haga clic en Terminar</td>
                         
                         <td *ngIf="ro.Letra!='xxxx'" class="expander" align="center" valign="middle" width="30" onMouseDown="" onMouseOver="" onMouseOut="">
-                        <img  (click)="opendetails(1,ro.codigo,ro.Letra)" *ngIf="ro.Letra!='xxxx'" src='../../../../assets/imgPatterns/{{ro.codigo}}.gif' >
+                        <img  (click)="opendetails(1,ro.codigo,ro.Letra)" *ngIf="ro.Letra!='xxxx'" src='../../../../assets/imgPatterns/{{ro.codigo}}.gif'>
                         </td>
 
                         <td *ngIf="ro.Letra!='xxxx'" class="titulo">{{ro.Letra}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ro.Descripcion}}</td>                       
@@ -255,7 +255,7 @@
         <div  class="col-sm-6" style="border: 1px;">
             <h5 class="card-header" style="background-color: #CECEF6;margin:0;padding:0" >&nbsp;&nbsp;Tipo de defecto: &nbsp;              
                 <select class="form-group form-control" id="selDefectologia" name="selDefectologia" style="width: 50%;margin:0;padding:0" size="1" (change)="ActualizaAtributos(selectedValue_td)"  [(ngModel)]='selectedValue_td'>
-                    <OPTION [value]="item.idTipoDefecto"   *ngFor="let item of typesdefects">{{item.descripcion}}</OPTION>
+                    <OPTION [value]="item.idTipoDefecto" *ngFor="let item of typesdefects">{{item.descripcion}}</OPTION>
                 </select>        
             </h5>
             <div class="card-body"  style="background-color:#F5A9E1">
@@ -270,15 +270,15 @@
                       <th class="header">Valor</th>
                       <th class="header">Tolerancia</th>
                     </tr>
-
+                    
                     <tr *ngFor="let t of table" >
                         
                         <td class="descripcion" >{{t.descripcion}} [{{t.unidad}}]</td>
                         
                         <td>
-                            <input *ngIf="t.IdAtributo==6" type="number" [(ngModel)]='t.value'   class="input" value="{{t.value}}"   >
-                            <input   *ngIf="t.IdAtributo!=6 && t.IdAtributo!=4" type="number" [(ngModel)]='t.value' class="input" value="{{t.value}}"  >
-                            <input   *ngIf="t.IdAtributo==4" type="number" class="input" [(ngModel)]='t.value' value="{{t.value}}"   >
+                            <input *ngIf="t.IdAtributo==6" type="number"  [(ngModel)]='t.value'   class="input" value="{{t.value}}"   >
+                            <input *ngIf="t.IdAtributo!=6 && t.IdAtributo!=4" type="number" [(ngModel)]='t.value' class="input" value="{{t.value}}"  >
+                            <input *ngIf="t.IdAtributo==4" type="number" class="input" [(ngModel)]='t.value' value="{{t.value}}"   >
 
                         </td>
                         

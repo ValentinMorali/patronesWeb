@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IfStmt } from '@angular/compiler';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DefectdeailtsComponent } from '../../modals/defectdeailts/defectdeailts.component';
@@ -98,6 +98,9 @@ client:string;
 thickness:string;
 record:string;
 
+//agrego
+idTipo;
+
 plantline:string;
 degree:string;
 steel:string;
@@ -123,7 +126,7 @@ lista;
 
 IdPedido;
 
-idTipo;
+id;
 
 
 iscreate:boolean;
@@ -411,14 +414,24 @@ await this.httpClient.get(url1).toPromise().then(value =>{
 
   var url1 = this.globals.baseUrl + '/AtributosDefectos/geteffecttypeattributes/'+this.selectedValue_td;
 
-  await this.httpClient.get(url1).toPromise().then(value =>{
+  await this.httpClient.get(url1).toPromise().then(value =>{ //llamada a la BD, agarra URL y devuelve value
 this.vector=value;
+console.log("value: ", value);
+console.log("value[0].id: ", value[0].id);
+console.log("value[0].idatributo: ", value[0].idAtributo);
+console.log("value[0].descripcion: ", value[0].descripcion);
+console.log("value[0].tolerancia: ", value[0].tolerancia);
+console.log("value[0].tolerancia: ", value[0].unidad);
+
+
 
 this.vector.forEach(element => {
   this.table.push( new dinamictable(undefined,element.idAtributo,element.descripcion,element.tolerancia,element.unidad));
-});
-   });
   
+});
+console.log("table: ", this.table);
+});
+
 
 
  // select TipoAtributo.IdAtributo, TipoAtributo.Descripcion, Tolerancia.Descripcion 'Tolerancia', TipoAtributo.Unidad from AtributosDefecto, TipoAtributo, Tolerancia where Tolerancia.Id = TipoAtributo.Tolerancia and TipoAtributo.IdAtributo = AtributosDefecto.IdAtributo and IdTipoDefecto="&IdTipoDefecto
@@ -605,7 +618,8 @@ verify() {
   {
       var Aux = 0;
 
-      if(this.idTipo != 12)  //idTipo es el tipo de tubo 
+      //idTipo es el tipo de tubo 
+      if(this.idTipo != 12)  
       {
         Aux = (parseInt(Espesor) * Porcentaje)/100; 
         if (Aux < 0.3) {
