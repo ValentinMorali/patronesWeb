@@ -9,7 +9,7 @@
             <IMG id=spsPageTitleIcon alt="" src="../../../../assets/img/spstopic.gif" align="center" width="49" height="49">
         </td>
         <td>
-            <font face="Verdana" size="2">Búsqueda de tubos patrones</font>
+            <font face="Verdana" size="5"><strong>Búsqueda de tubos patrones</strong></font>
         </td>
     </tr>
     <tr>
@@ -29,7 +29,7 @@
             <div class="form-row" style="padding:0;margin:0">
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0"> Diámetro[mm]</label>
-                    <input type="text" placeholder="Ingrese un nro" formControlName="diam" class="form-control" [(ngModel)]="diamvalue" (change)="Verificarnum(1)" />
+                    <input type="number" placeholder="Ingrese un nro" formControlName="diam" class="form-control" [(ngModel)]="diamvalue" (change)="Verificarnum(1)" />
                     <!-- con la Expr regular pattern="[0-9]+" se filtran numeros del input -->
                 </div>
 
@@ -52,7 +52,7 @@
 
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Ciclo</label>
-                    <input type="text" formControlName="cycle" class="form-control" [(ngModel)]="cyclevalue" (change)="Verificarnum(3)" />
+                    <input type="number" formControlName="cycle" class="form-control" [(ngModel)]="cyclevalue" (change)="Verificarnum(3)" />
                 </div>
 
             </div>
@@ -61,7 +61,7 @@
             <div class="form-row" style="padding:0;margin:0">
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0"> Espesor[mm]</label>
-                    <input type="text" placeholder="Ingrese un nro" formControlName="thickness" class="form-control" [(ngModel)]="thicknessvalue" (change)="Verificarnum(6)" />
+                    <input type="number" placeholder="Ingrese un nro" formControlName="thickness" class="form-control" [(ngModel)]="thicknessvalue" (change)="Verificarnum(6)" />
                 </div>
 
                 <!-- <div class="form-group col-2" style="margin:0">
@@ -81,7 +81,7 @@
 
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Colada</label>
-                    <input type="text" formControlName="steel_casting" class="form-control" [(ngModel)]="steel_castingvalue" (change)="Verificarnum(4)" />
+                    <input type="number" formControlName="steel_casting" class="form-control" [(ngModel)]="steel_castingvalue" (change)="Verificarnum(4)" />
                 </div>
 
             </div>
@@ -91,7 +91,7 @@
             <div class="form-row" style="padding:0;margin:0">
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0"> Longitud[mm]</label>
-                    <input type="text" placeholder="Ingrese un nro" formControlName="length" class="form-control" [(ngModel)]="lengthvalue" (change)="Verificarnum(5)" />
+                    <input type="number" placeholder="Ingrese un nro" formControlName="length" class="form-control" [(ngModel)]="lengthvalue" (change)="Verificarnum(5)" />
                 </div>
 
                 <!-- <div class="form-group col-2" style="margin:0">
