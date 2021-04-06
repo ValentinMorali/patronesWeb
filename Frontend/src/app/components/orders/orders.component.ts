@@ -25,8 +25,8 @@ export interface orderlist {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, AO: 'Solicitar un nuevo tubo patrón', description: 'Formulario de pedido de tubo patrón para ser fabricado.'},
-  {position: 2, AO: 'Buscar un tubo patrón', description:'Búsqueda de tubos patrones existentes en base a un conjunto de filtros.'}
+  {position: 1, AO: 'Solicitar un nuevo tubo patrón', description: 'Formulario de pedido de tubo patrón para ser fabricado'},
+  {position: 2, AO: 'Buscar un tubo patrón', description:'Búsqueda de tubos patrones existentes en base a un conjunto de filtros'}
 ];
 
 const ELEMENT_DATA2: orderlist[] = [

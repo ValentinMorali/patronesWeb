@@ -7,15 +7,15 @@
 
 <div class="container margen" (click)="navigate(dataSource[0].AO)" >
   <div class="card cards">
-    <div class="card-body">
+    <div class="card-body stretched-link">
       <div class="row">
         <div class="col-md-9">
           <h4 class="card-title" style="margin-left: 30px; margin-top: 10px;"> {{ dataSource[0].AO }}</h4>
           <hr>
-          <h6 class="card-text" style="margin-left: 20px;"> <em> {{ dataSource[0].description }} </em></h6>
+          <p class="card-text" style="margin-left: 20px; font-size: large;"> {{ dataSource[0].description }} </p>
         </div>
         <div class="col-md-3">
-          <i class='fa fa-search' style="font-size:120px;"></i>
+          <i class='fa fa-search' style="font-size:80px; margin-top: 20px;"></i>
         </div>
       </div>
     </div>
@@ -30,10 +30,10 @@
         <div class="col-md-9">
           <h4 class="card-title" style="margin-left: 30px; margin-top: 10px;"> {{ dataSource[1].AO }}</h4>
           <hr>
-          <h6 class="card-text" style="margin-left: 20px;"> <em>{{ dataSource[1].description }} </em></h6>
+          <p class="card-text" style="margin-left: 20px; font-size: large;"> {{ dataSource[1].description }} </p>
         </div>
         <div class="col-md-3">
-          <i class='fa fa-pencil-square-o' style="font-size:120px;" ></i>
+          <i class='fa fa-pencil-square-o' style="font-size:80px; margin-top: 20px;" ></i>
         </div>
       </div>
     </div>
@@ -52,7 +52,7 @@
     <div class="card-body">
       <h4 class="card-title" style="margin-left: 30px; margin-top: 10px;"> {{ dataSource2[i].order }}</h4>
       <hr>
-      <h6 class="card-text" style="margin-left: 20px;"> <em>{{ dataSource2[i].description }} </em></h6>
+      <p class="card-text" style="margin-left: 20px; font-size: large;"> {{ dataSource2[i].description }}</p>
     </div>
   </div>
 </div>
