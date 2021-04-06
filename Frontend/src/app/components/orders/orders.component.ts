@@ -65,10 +65,14 @@ export class OrdersComponent implements OnInit {
   ngOnInit() {
   }
 
-
+    
+    
     navigate(order){
       //console.log("Debug: navigate(order)");
-      console.log(order)
+      console.log(order);
+      console.log("DATA SOURCE: ",this.dataSource);
+    console.log("DATA SOURCE2: ",this.dataSource2);
+      
     
    if(order=="Solicitar un nuevo tubo patrón")
    {

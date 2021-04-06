@@ -8,3 +8,18 @@ table {
 cursor: pointer;
 color:blue
   }
+
+  .icono{
+    margin-top: 50px;
+  }
+
+  .margen{
+    margin-top: 50px;
+    margin-left: 350px;
+  }
+
+  .cards{
+    height: 170px;
+    width: 600px;
+    background-color:lavender;
+  }
