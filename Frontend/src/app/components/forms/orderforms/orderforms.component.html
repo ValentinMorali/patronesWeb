@@ -1,3 +1,16 @@
+<h4>Formularios <small> Reactivos </small></h4>
+<hr>
+
+<pre>
+    Estado del formulario: {{ neworder.valid }}
+    <br>
+    Status: {{ neworder.status }}
+</pre>
+<pre>
+    {{ neworder.value | json }}
+</pre>
+
+
 <table border="0" width="100%" id="table1">
 
     <tr>
@@ -5,7 +18,6 @@
     </tr>
     <tr>
         <td rowspan="2">
-            <!-- <IMG id=spsPageTitleIcon alt="" src="img/spstopic.gif" align="center" width="49" height="49"> -->
             <IMG id=spsPageTitleIcon alt="" src="../../../../assets/img/spstopic.gif" align="center" width="49" height="49">
 
         </td>
@@ -23,7 +35,7 @@
 
 
 
-<form [formGroup]="neworder">
+<form autocomplete="off" [formGroup]="neworder">
 
 
     <div class="card m-1">
@@ -34,7 +46,10 @@
             <div class="form-row" style="padding:0;margin:0">
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">Usuario</label>
-                    <input type="text" formControlName="user" class="form-control" />
+                    <input 
+                        type="text" 
+                        formControlName="user" 
+                        class="form-control">
 
                 </div>
 
@@ -75,7 +90,16 @@
             <div class="form-row" style="padding:0;margin:0">
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">Cliente</label>
-                    <input type="text" formControlName="client" [style.background-color]="clientcolor" class="form-control" />
+                    <input 
+                        class="form-control"
+                        type="text" 
+                        formControlName="client" 
+                        [style.background-color]="clientcolor"
+                        required 
+                        [class.is-invalid]="neworder.get('client').invalid && neworder.get('client').touched " />
+                        <small *ngIf="neworder.get('client').invalid && neworder.get('client').touched " class="text-danger" >
+                            ingrese al menos 5 letras
+                        </small>
 
                 </div>
 
@@ -167,17 +191,17 @@
             <div class="form-row" style="padding:0;margin:0" *ngIf="isvirgin">
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">Diámetro [mm]</label>
-                    <input type="text" formControlName="diam" class="form-control" [(ngModel)]="diamvalue" (change)="checknum(1)" required />
+                    <input type="text" formControlName="diam" class="form-control" [(ngModel)]="diamvalue" (change)="checknum(1)" />
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Grado</label>
-                    <input type="text" formControlName="degree" class="form-control" required/>
+                    <input type="text" formControlName="degree" class="form-control"/>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Ciclo</label>
-                    <input type="number" [style.background-color]="cyclecolor" [(ngModel)]="cyclevalue" formControlName="cycle" class="form-control" (change)="checknum(2)" required/>
+                    <input type="number" [style.background-color]="cyclecolor" [(ngModel)]="cyclevalue" formControlName="cycle" class="form-control" (change)="checknum(2)"/>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
@@ -195,17 +219,17 @@
             <div class="form-row" style="padding:0;margin:0" *ngIf="isvirgin">
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">Espesor [mm]</label>
-                    <input type="text" formControlName="thickness" class="form-control" [(ngModel)]="thicknessvalue" (change)="checknum(3)" required/>
+                    <input type="text" formControlName="thickness" class="form-control" [(ngModel)]="thicknessvalue" (change)="checknum(3)"/>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Acero</label>
-                    <input type="text" formControlName="steel" class="form-control" required/>
+                    <input type="text" formControlName="steel" class="form-control"/>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Colada</label>
-                    <input [style.background-color]="steel_castingcolor" type="text" [(ngModel)]="steel_castingvalue" formControlName="steel_casting" (change)="checknum(4)" class="form-control" required/>
+                    <input [style.background-color]="steel_castingcolor" type="text" [(ngModel)]="steel_castingvalue" formControlName="steel_casting" (change)="checknum(4)" class="form-control"/>
                 </div>
 
             </div>
@@ -217,13 +241,13 @@
             <div class="form-row" style="padding:0;margin:0" *ngIf="isvirgin">
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">Longitud [mm]</label>
-                    <input [style.background-color]="lengthcolor" type="text" [(ngModel)]="lengthvalue" formControlName="length" value=0 class="form-control" (change)="checknum(5)" required/>
+                    <input [style.background-color]="lengthcolor" type="text" [(ngModel)]="lengthvalue" formControlName="length" value=0 class="form-control" (change)="checknum(5)"/>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Trat. Térmico</label>
 
-            <select [style.background-color]="heat_treatmentcolor" formControlName="heat_treatment" class="form-control" required>
+            <select [style.background-color]="heat_treatmentcolor" formControlName="heat_treatment" class="form-control">
               <OPTION VALUE="0">SI</OPTION>
               <OPTION VALUE="1">NO</OPTION>
             </select>
@@ -231,7 +255,7 @@
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Expediente</label>
-                    <input type="text" formControlName="record" class="form-control" required/>
+                    <input type="text" formControlName="record" class="form-control"/>
                 </div>
 
             </div>
@@ -337,7 +361,14 @@
                     <input type="text" formControlName="location" class="form-control" />
                 </div>
                 <div class="form-group col-3" style="text-align: right;">
-                    <input class="btn btn-outline-primary" style="padding:15px;" id="sigboton" type="submit" Value="Siguiente" (click)="validate()">
+                    <input 
+                        class="btn btn-outline-primary" 
+                        style="padding:15px;" 
+                        id="sigboton" 
+                        type="submit" 
+                        Value="Siguiente" 
+                        (click)="validate()">
+<!-- validar todo al apretar siguiente, no poner min y maxlengh -->
 
                 </div>
 

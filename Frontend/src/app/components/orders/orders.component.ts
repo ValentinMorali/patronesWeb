@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Globals } from '../../global'
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { UserService } from '../shared/user/user-service.component';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, RouterModule, NavigationEnd } from '@angular/router';
 import { InfoModalComponent } from '../shared/info-modal/info-modal.component';
 import { User } from '../../user.model';
 import { interval, Subscription } from 'rxjs';

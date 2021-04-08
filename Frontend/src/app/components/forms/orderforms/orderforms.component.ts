@@ -213,7 +213,7 @@ listaaux;
   constructor(private formBuilder: FormBuilder,private router: Router,private route: ActivatedRoute,    private globals: Globals, private httpClient: HttpClient) {      
 
     this.idd= this.route.snapshot.paramMap.get('id');
-//console.log(this.idd)
+console.log("this.idd: ",this.idd)
 
 
 this.fActivarAlerta=false;
@@ -388,6 +388,7 @@ this.diamvalue=this.listaaux[0].diam;
 
 //alert(this.listaaux[0].pattern_code)
 
+
      this.neworder = this.formBuilder.group({
       user: [this.listaaux[0].user],
       plant_line: [this.listaaux[0].plant_line],
@@ -443,7 +444,7 @@ this.diamvalue=this.listaaux[0].diam;
     plant_line: [''],
     tubetype: [''],
     template: [''],
-    client: [''],
+    client: ['', [Validators.required, Validators.minLength(4)] ],
     notify_auditor: [''],
     auditor: [''],
     ot: [''],
@@ -657,7 +658,7 @@ changevirgin()	{
     plant_line: [this.neworder.get("plant_line").value],
     tubetype: [this.neworder.get("tubetype").value],
     template: [this.neworder.get("template").value],
-    client: [this.neworder.get("client").value],
+    client: [this.neworder.get("client").value, [Validators.required, Validators.minLength(4)]],
     notify_auditor: [this.neworder.get("notify_auditor").value],
     auditor: [this.neworder.get("auditor").value],
     ot: [this.neworder.get("ot").value],
@@ -716,7 +717,7 @@ this.isvirgin=false;
       plant_line: [this.neworder.get("plant_line").value],
       tubetype: [this.neworder.get("tubetype").value],
       template: [this.neworder.get("template").value],
-      client: [this.neworder.get("client").value],
+      client: [this.neworder.get("client").value, [Validators.required, Validators.minLength(4)] ],
       notify_auditor: [this.neworder.get("notify_auditor").value],
       auditor: [this.neworder.get("auditor").value],
       ot: [this.neworder.get("ot").value],
@@ -1102,6 +1103,13 @@ if(accepted!=""){
 */
 
 //comun en ambos
+
+if ( this.neworder.invalid ) {
+  return Object.values( this.neworder.controls ).forEach( control => {
+    control.markAsTouched()
+  })
+} 
+
 if (this.neworder.get("plant_line").value == '') {
   str = str + "Debe indicar una línea válida \n\r"
   Res = false;
@@ -1856,7 +1864,7 @@ this.timesend =new Date(year,month,day,vectime[0],vectime[1]);
     plant_line: [this.neworder.get("plant_line").value],
     tubetype: [this.neworder.get("tubetype").value],
     template: [this.neworder.get("template").value],
-    client: [this.neworder.get("client").value],
+    client: [this.neworder.get("client").value, [Validators.required, Validators.minLength(4)]],
     notify_auditor: [n_a],
     auditor: [this.neworder.get("auditor").value],
     ot: [this.neworder.get("ot").value],

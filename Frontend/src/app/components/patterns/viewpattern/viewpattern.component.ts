@@ -88,7 +88,7 @@ export class ViewpatternComponent implements OnInit {
   code:string;
   length:number;
   cycle:number;
-  tubetype:string; //este es el codigo del tubo para el pdf
+  tubetype:string;
   diam:string;
   steelcasting:string;
   client:string;
@@ -121,7 +121,7 @@ vector;
     this.requiredorders=[];
 
     this.lista= JSON.parse(sessionStorage.getItem('wantedpattern'));
-//console.log(this.lista)
+console.log("lista =", this.lista)
 
 
    // alert("aa")
@@ -134,6 +134,9 @@ vector;
     this.client=this.lista[0].cliente;
     this.thickness=this.lista[0].espesor;
     this.record=this.lista[0].expediente;
+    console.log("valor de longitud: ", this.length);
+ 
+    
 
  //alert(this.lista[0].idPedido)
 
@@ -219,7 +222,7 @@ var url1 = this.globals.baseUrl + '/DefectosPedidos/getDefects/'+this.lista[0].i
 
 await this.httpClient.get(url1).toPromise().then(value =>{
 this.vector=value;
-console.log(value)
+console.log("value: ",value)
 this.vector.forEach(element => {
   if(this.vector!=null){
     this.requiredorders.push( new orderstable(element.letra,element.id,element.idPedido,element.descripcion,element.codigo,element.valor)); 

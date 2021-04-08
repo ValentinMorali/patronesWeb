@@ -139,7 +139,7 @@ vector;
   
   ///////////
   console.log( this.listaaux[0].tol3)
-  console.log( this.listaaux[0].length)
+  console.log( "longitud de listaaux[0]: ", this.listaaux[0].length)
   
   if(this.listaaux[0].length!="" && this.listaaux[0].tol3!=undefined){
     this.Longitud1 = this.listaaux[0].length*(1-(this.listaaux[0].tol3/100));
@@ -516,7 +516,7 @@ await this.httpClient.get(url1).toPromise().then(value =>{
 
   
   selecciono(event) {
-    console.log(event)
+    console.log("event: ",event)
 
     this.listsend.push( 
       new pattern(

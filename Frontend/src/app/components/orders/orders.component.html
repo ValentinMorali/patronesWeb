@@ -5,22 +5,32 @@
   Operaciones disponibles
 </h3>
 
-<div class="container margen" (click)="navigate(dataSource[0].AO)" >
+ <!-- (click)="navigate(dataSource[0].AO)" -->
+<div class="container margen">
   <div class="card cards">
-    <div class="card-body stretched-link">
+    <div class="card-body">
       <div class="row">
         <div class="col-md-9">
           <h4 class="card-title" style="margin-left: 30px; margin-top: 10px;"> {{ dataSource[0].AO }}</h4>
           <hr>
           <p class="card-text" style="margin-left: 20px; font-size: large;"> {{ dataSource[0].description }} </p>
         </div>
+        <!-- <a [routerLink]="['/orderforms/0']" class="stretched-link" > hola </a> -->
         <div class="col-md-3">
-          <i class='fa fa-search' style="font-size:80px; margin-top: 20px;"></i>
+          <i class='fa fa-pencil-square-o' style="font-size:80px; margin-top: 30px; margin-left: 15px;" ></i>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<mat-card class="card" >
+  <mat-card-content>
+       <mat-card-title> hola </mat-card-title>
+       <mat-card-subtitle> mundo </mat-card-subtitle>
+  </mat-card-content>
+</mat-card>
+
 
 
 <div class="container margen" (click)="navigate(dataSource[1].AO)" >
@@ -33,7 +43,7 @@
           <p class="card-text" style="margin-left: 20px; font-size: large;"> {{ dataSource[1].description }} </p>
         </div>
         <div class="col-md-3">
-          <i class='fa fa-pencil-square-o' style="font-size:80px; margin-top: 20px;" ></i>
+          <i class='fa fa-search' style="font-size:80px; margin-top: 30px; margin-left: 15px;"></i>
         </div>
       </div>
     </div>
@@ -47,7 +57,7 @@
 
 
 
-<div class="container margen" *ngFor="let data of dataSource2; let i = index" (click)="navigate(dataSource2[i].AO)" >
+<div class="container margen" *ngFor="let data of dataSource2; let i = index" (click)="navigate(dataSource2[i].order)" >
   <div class="card cards">
     <div class="card-body">
       <h4 class="card-title" style="margin-left: 30px; margin-top: 10px;"> {{ dataSource2[i].order }}</h4>
