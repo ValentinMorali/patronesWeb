@@ -47,6 +47,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ViewpatternComponent } from './components/patterns/viewpattern/viewpattern.component';
 import { ModifypatternComponent } from './components/modals/modifypattern/modifypattern.component';
 import { SearchorderbytypeComponent } from './components/searchorderbytype/searchorderbytype.component';
+// import { MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -104,6 +105,7 @@ import { SearchorderbytypeComponent } from './components/searchorderbytype/searc
     FormsModule,
     MatSortModule,
     BrowserAnimationsModule
+    // MatCardModule
 
   ],
   providers: [Globals, 

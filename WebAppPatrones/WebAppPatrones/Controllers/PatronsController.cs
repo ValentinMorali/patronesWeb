@@ -469,6 +469,7 @@ namespace WebAppPatrones.Controllers
                                     Ciclo = Int32.Parse(result.GetValue(9).ToString()),//
                                     Longitud = Double.Parse(result.GetValue(5).ToString()),
                                     Colada = Int32.Parse(result.GetValue(10).ToString()),
+                                    Expediente = result.GetValue(11).ToString(),
                                     Acero = result.GetValue(8).ToString(),//
                                     Grado = result.GetValue(20).ToString(),//
                                     TratamientoTermico = result.GetValue(14).ToString(),//

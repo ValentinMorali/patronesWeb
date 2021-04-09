@@ -22,4 +22,8 @@ color:blue
     height: 170px;
     width: 600px;
     background-color:lavender;
+    transition: background-color .5s;
+  }
+  .cards:hover {
+    background-color:indianred;
   }

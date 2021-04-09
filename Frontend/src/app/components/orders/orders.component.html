@@ -1,12 +1,13 @@
-<h1 style="text-align: center" > Patrones <small> Webapp</small></h1>
+<h1 style="margin-left: 500px;" > Patrones <small> Webapp</small></h1>
 <hr>
 
-<h3 style="margin-left: 380px;">
+<h3 style="margin-left: 480px;">
   Operaciones disponibles
 </h3>
 
+
  <!-- (click)="navigate(dataSource[0].AO)" -->
-<div class="container margen">
+<div class="container margen" (click)="navigate(dataSource[0].AO)" >
   <div class="card cards">
     <div class="card-body">
       <div class="row">
@@ -23,13 +24,6 @@
     </div>
   </div>
 </div>
-
-<mat-card class="card" >
-  <mat-card-content>
-       <mat-card-title> hola </mat-card-title>
-       <mat-card-subtitle> mundo </mat-card-subtitle>
-  </mat-card-content>
-</mat-card>
 
 
 
@@ -51,7 +45,7 @@
 </div>
 
 <hr>
-<h3 style="margin-left: 380px;">
+<h3 style="margin-left: 480px;">
   Pedidos en curso por carpeta
 </h3>
 
