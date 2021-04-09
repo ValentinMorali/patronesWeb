@@ -25,5 +25,5 @@ color:blue
     transition: background-color .5s;
   }
   .cards:hover {
-    background-color:indianred;
+    background-color:lightblue;
   }
