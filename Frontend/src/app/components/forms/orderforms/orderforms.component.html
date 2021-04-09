@@ -34,7 +34,6 @@
 </table>
 
 
-
 <form autocomplete="off" [formGroup]="neworder">
 
 
@@ -45,7 +44,7 @@
 
             <div class="form-row" style="padding:0;margin:0">
                 <div class="form-group col-3" style="margin:0">
-                    <label style="padding:0;margin:0">Usuario</label>
+                    <label style="padding:0;margin:0"> Usuario </label>
                     <input 
                         type="text" 
                         formControlName="user" 
@@ -54,9 +53,15 @@
                 </div>
 
                 <div class="form-group col-6" style="margin:0">
-                    <label style="padding:0;margin:0">Planta/Línea</label>
-                    <select formControlName="plant_line" class="form-control" [(ngModel)]='selectedValue' (change)="findtubetype($event.target.value)">
-                    <OPTION [value]="item.description"  id="{{item.id}}" *ngFor="let item of lista">{{item.description}}</OPTION>
+                    <label style="padding:0;margin:0"> Planta/Línea </label>
+                    <select formControlName="plant_line" 
+                            class="form-control" 
+                            [(ngModel)]='selectedValue' (change)="findtubetype($event.target.value)">
+                    <OPTION [value]="item.description"  
+                            id="{{item.id}}" 
+                            *ngFor="let item of lista">
+                            {{item.description}}
+                    </OPTION>
 
                   </select>
 
@@ -98,25 +103,37 @@
                         required 
                         [class.is-invalid]="neworder.get('client').invalid && neworder.get('client').touched " />
                         <small *ngIf="neworder.get('client').invalid && neworder.get('client').touched " class="text-danger" >
-                            ingrese al menos 5 letras
+                            * ingrese un cliente
                         </small>
 
                 </div>
 
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">Notificar al auditor</label>
-                    <select [style.background-color]="notify_auditorcolor" formControlName="notify_auditor" class="form-control">
+                    <select class="form-control"
+                            formControlName="notify_auditor" 
+                            [style.background-color]="notify_auditorcolor" 
+                            [class.is-invalid]="neworder.get('notify_auditor').invalid && neworder.get('notify_auditor').touched">
                     <OPTION VALUE="0">SI</OPTION>
                     <OPTION VALUE="1" selected>NO</OPTION>
   
                   </select>
+                  <small *ngIf="neworder.get('notify_auditor').invalid && neworder.get('notify_auditor').touched " class="text-danger" >
+                    * seleccione una opcion
+                </small>
 
                 </div>
 
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">Auditor</label>
-                    <input type="text" formControlName="auditor" class="form-control" />
+                    <input type="text" 
+                           formControlName="auditor" 
+                           class="form-control" 
+                           [class.is-invalid]="neworder.get('auditor').invalid && neworder.get('auditor').touched" />
 
+                           <small *ngIf="neworder.get('auditor').invalid && neworder.get('auditor').touched " class="text-danger" >
+                               * ingrese un auditor
+                           </small>
                 </div>
             </div>
 
@@ -125,16 +142,28 @@
             <div class="form-row" style="padding:0;margin:0">
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">OT-PMANT</label>
-                    <input type="text" formControlName="ot" class="form-control" />
+                    <input type="text" 
+                           formControlName="ot" 
+                           class="form-control" 
+                           [class.is-invalid]="neworder.get('ot').invalid && neworder.get('ot').touched" />
+                           <small *ngIf="neworder.get('ot').invalid && neworder.get('ot').touched " class="text-danger" >
+                            * ingrese un ot
+                           </small>
 
                 </div>
 
                 <div class="form-group col-3">
                     <label style="padding:0;margin:0">Respuesta acústica</label>
-                    <select [style.background-color]="acoustic_responsecolor" formControlName="acoustic_response" class="form-control">
+                    <select [style.background-color]="acoustic_responsecolor" 
+                            formControlName="acoustic_response" 
+                            class="form-control"
+                            [class.is-invalid]="neworder.get('acoustic_response').invalid && neworder.get('acoustic_response').touched " >
                     <OPTION VALUE="0">SI</OPTION>
                     <OPTION VALUE="1">NO</OPTION>
                   </select>
+                  <small *ngIf="neworder.get('acoustic_response').invalid && neworder.get('acoustic_response').touched " class="text-danger" >
+                    * ingrese una respuesta acustica
+                   </small>
 
                 </div>
 
