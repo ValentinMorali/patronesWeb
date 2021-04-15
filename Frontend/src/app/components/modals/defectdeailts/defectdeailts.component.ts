@@ -48,8 +48,8 @@ export class DefectdeailtsComponent implements OnInit {
 
 
 
-console.log(this.vector)
-console.log(this.vector2)
+console.log("vector: ", this.vector)
+console.log("vector2: ",this.vector2)
 var j=0;
 this.vector.forEach(element => {
 element.valor=element.valor.replace(",",".");

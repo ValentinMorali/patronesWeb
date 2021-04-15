@@ -120,6 +120,10 @@ atributos:atributosDefecto[]=[];
 
 requiredorders:orderstable[]=[];
 
+nuevaTabla = [];
+varIncrementada = [];
+pixelCSSDefecto = -200;
+
 IdDefecto;
 
 lista;
@@ -147,6 +151,32 @@ listasend:next[]=[];
   constructor(  private modalService: NgbModal,private router: Router, private globals: Globals, private httpClient: HttpClient) {
 
    }
+   DibujarDefecto() {
+    console.log("hola, varIncrementada: ", this.varIncrementada);
+    this.varIncrementada.push(5);
+    console.log("hola, varIncrementada: ", this.varIncrementada);
+    
+  }
+  RedondearNumero(  ){
+    console.log(Math.round(450000.144444 * 100) / 100)
+  } //metodo para obtener un redondeo en milimetros del defecto del tubo
+
+  PixelDeLongitud( ) {
+    console.log(760 / 150000)
+    return(600/150000)
+  }
+
+  PixelDePosicion( ){
+    console.log( this.PixelDeLongitud() * 42000 );
+    
+  }
+
+  PixelDePosicionCSS( ) {
+    this.pixelCSSDefecto = -15;
+    console.log( this.pixelCSSDefecto );
+    
+  }
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -344,6 +374,8 @@ var j=0;
         modalRef.componentInstance.id = element.id; //iddefecto
         modalRef.result.then((result) => {
          console.log(result);
+         console.log("requiredorders: ", this.requiredorders);
+         
         }).catch((error) => {
           console.log(error);
         });
@@ -367,7 +399,7 @@ var j=0;
     this.table=[];
     
     this.atributos=[];
-    
+    console.log("requiredorders: ", this.requiredorders);
     this.requiredorders=[];
     
 
@@ -452,11 +484,14 @@ console.log("table: ", this.table);
       this.table[j].value=5;
       this.table[j].th=15;
       this.table[j].tl=15;
+      console.log("table1: ", this.table);
 
     }
 
     if(element.IdAtributo==4){
       this.table[j].value=0;
+      console.log("table2: ", this.table);
+
     }
 
 j++;
@@ -491,14 +526,17 @@ await this.httpClient.get(url1).toPromise().then(value =>{
 
 var url1 = this.globals.baseUrl + '/DefectosPedidos/getDefects/'+this.IdPedido;
 
+
 await this.httpClient.get(url1).toPromise().then(value =>{
 this.vector=value;
 //console.log(this.vector)
 this.vector.forEach(element => {
   if(this.vector!=null){
     this.requiredorders.push( new orderstable(element.letra,element.id,element.idPedido,element.descripcion,element.codigo,element.valor)); 
+    console.log("requiredordersPush: ", this.requiredorders);
   }else{
     this.requiredorders.push( new orderstable("xxxx",66549,12784,"Oblicuo Izquierdo Interno","OI",2));
+    console.log("requiredordersPush2: ", this.requiredorders);
   }
   });
  });
@@ -593,8 +631,11 @@ this.table.forEach(element => {
     this.table[j].value=0;
   }
 
+  
 j++;
+
 });
+
 
 
   //alert("falta esta funcion paso esto a la pantalla attrdefecto  : &Request.QueryString('IdPedido')&&IdTipoDefecto=''+defectologia.options[defectologia.selectedIndex].value;")
@@ -640,6 +681,11 @@ verify() {
 
 
   }  
+
+  MostrarDefectos(){
+    console.log("holaa");
+    
+  }
 //////////////////////////////////////////
  async ProcesarDefecto(event,elegido) { 
    
@@ -647,12 +693,12 @@ verify() {
   //console.log(document.getElementById("Posicion").innerText)
   var j=0;
   this.error=true;
-//console.log(this.table)
+console.log("asyncProcesarDefecto - table:" ,this.table)
 
 for (var i = 0; i < this.table.length; ++i){
 
   if(this.table[i].value==undefined){
-    alert("No se debe dejar ningún atributo vacío")
+    alert("No se debe dejar ningún atributo vacío") //hay campos vacios (posicion, ancho,prof, longmax)
     this.error=false;
     break;
       }
@@ -822,13 +868,12 @@ if(element.IdAtributo==3){  // falta hacer porque en la db no esta implementado
 
 
     }// element.IdAtributo==2
-
-
-
     
-j++;
+  
+    j++;
 
   });//termino foreach table 
+
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -998,9 +1043,6 @@ if(this.vector3[j].id==6 ){
 }//forrrrrrr
 
 
-
-      
-
 //////////////////////////////////////////////////////////////////////////////
 
 
@@ -1019,7 +1061,7 @@ this.letraglobal=letra;
     this.iscreate=false;
     this.ismodify=true;
 
-  //  console.log(this.requiredorders)
+    console.log(" requiredorders4: ",this.requiredorders)
 //alert(letra)
 //alert(codigo)
 

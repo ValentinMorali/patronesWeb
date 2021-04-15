@@ -1,5 +1,3 @@
-
-
 <table border="0" width="100%" id="table1">
 
 	<tr>
@@ -143,10 +141,61 @@
     </table>
 
 
+<div>
+  <h4 style="margin-top: 20px;
+             margin-left: 500px; " >
+    Tubo patron
+  </h4>
+
+</div>
+
+<div>
+  <img src="../../../../assets/img/Left.bmp" alt="" class="tuboIzquierdo">
+  <img src="../../../../assets/img/Center.bmp" class="tuboCentro" alt="">
+  <img src="../../../../assets/img/Right.bmp" class="tuboDerecho" alt="">
+  <img src="../../../../assets/imgPatterns/CH.gif"
+       alt=""
+       style="position: absolute;
+              height: 12px;
+              top: 350px;
+              margin-left: -200px;">
+
+</div>
+
+<div>
+  <button (click)="RedondearNumero()" 
+          class="btn btn-outline-primary">
+          RedondearNumero()
+
+  </button>
+</div>
+<div>
+  <button (click)="PixelDeLongitud(  )" 
+          class="btn btn-outline-primary">
+          PixelDeLongitud(  )
+  </button>
+</div>
+
+<div>
+  <button (click)="PixelDePosicion(  )" 
+          class="btn btn-outline-primary">
+          PixelDePosicion(  )
+
+  </button>
+</div>
+
+<div>
+  <button (click)="PixelDePosicionCSS(  )" 
+          class="btn btn-outline-primary">
+          PixelDePosicionCSS(  )
+
+  </button>
+</div>
+
 
 
     <BR>
-        <div align="center">
+        <div align="center" style="margin-top: 20px;">
         <table cellspacing="0" cellpadding="0" border="1" bordercolor="#666666" width="768" height="80">
         <tr>
         <td style="margin-left: 10px; margin-top: 50px;" 
@@ -257,7 +306,12 @@
           
         <div  class="col-sm-6" style="border: 1px;">
             <h5 class="card-header" style="background-color: #CECEF6;margin:0;padding:0" >&nbsp;&nbsp;Tipo de defecto: &nbsp;              
-                <select class="form-group form-control" id="selDefectologia" name="selDefectologia" style="width: 50%;margin:0;padding:0" size="1" (change)="ActualizaAtributos(selectedValue_td)"  [(ngModel)]='selectedValue_td'>
+                <select class="form-group form-control" 
+                        id="selDefectologia" 
+                        name="selDefectologia" 
+                        style="width: 50%;margin:0;padding:0" 
+                        size="1" (change)="ActualizaAtributos(selectedValue_td)"  
+                        [(ngModel)]='selectedValue_td'>
                     <OPTION [value]="item.idTipoDefecto" *ngFor="let item of typesdefects">{{item.descripcion}}</OPTION>
                 </select>        
             </h5>
@@ -298,13 +352,21 @@
 
                 <!-- <input *ngIf = "iscreate" class="button" type="Button" Value="Crear defecto" (click)="ProcesarDefecto(0)"> -->
 
-                <input *ngIf = "iscreate" type="Button" Value="Crear defecto" (click)="ProcesarDefecto(0)" class="btn btn-outline-primary">
+                <input *ngIf = "iscreate" 
+                        type="Button" 
+                        Value="Crear defecto" 
+                        (click)=" DibujarDefecto(); ProcesarDefecto(0)" 
+                        class="btn btn-outline-primary">
                 <!-- <button  style='width:150px; height:50px' (click)="viewPDF( this.code )"> -->
 
 
 
 
-                <input *ngIf = "ismodify" class="button" type="Button" Value="Modificar defecto" (click)="ProcesarDefecto(1,selectedValue_td)" >
+                <input *ngIf = "ismodify" 
+                        class="button" 
+                        type="Button" 
+                        Value="Modificar defecto" 
+                        (click)="ProcesarDefecto(1,selectedValue_td)" >
 
 
           </div>
@@ -327,4 +389,8 @@
 
       </div>
 
-
+<div>
+  <p>
+    Valor de result: {{ table | json }}
+  </p>
+</div>

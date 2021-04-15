@@ -30,6 +30,26 @@ font.descripcion {
 	font-size: 10pt;
     border: 0px solid #999999;
   }
+
+  .tuboIzquierdo{
+	  position:relative;
+	  margin-left: 200px;
+	  width: 50px;
+	  height: 100px;
+
+  }
+
+  .tuboCentro{
+	position:relative;
+	width: 700px;
+	height: 100px;
+  }
+
+  .tuboDerecho{
+	position:relative;
+	width: 50px;
+	height: 100px;
+  }
     
   .tabladatos {
 	font-family: verdana, arial, 'sans serif';
@@ -101,6 +121,14 @@ font.descripcion {
 	margin: 0px;
 	padding: 0px;
 	border: 1px solid #999999;
+  }
+
+  .tuboMuestra {
+	  position: relative;
+	  margin-left: 300px;
+	  margin-top: 50px;
+	  width: 600px;
+	  height: 100px;
   }
 
   .eliminacion{
