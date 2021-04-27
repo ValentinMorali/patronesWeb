@@ -99,6 +99,7 @@ class next {
 
 
 
+
 @Component({
   selector: 'app-orderforms',
   templateUrl: './orderforms.component.html',
@@ -109,6 +110,7 @@ class next {
 
 export class OrderformsComponent implements OnInit {
   neworder: FormGroup;
+  longitudNewPatron;
   submitted = false;
   dt: Date;
 time:string;
@@ -2082,6 +2084,12 @@ this.httpClient.get(url1).subscribe((res: any[]) => {
     console.log("cambiarboolean");
     
   }
-
+  enviarLongitudTubo() {
+    this.longitudNewPatron = this.neworder.value.length;
+    console.log("longitudNewpatron: " , this.longitudNewPatron);
+    
+    
+    
+  }
 }//termina
 

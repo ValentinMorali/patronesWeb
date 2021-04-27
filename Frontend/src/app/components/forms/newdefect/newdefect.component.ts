@@ -9,6 +9,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router, NavigationEnd } from '@angular/router';
 import { Time } from '@angular/common';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 class selects {
   constructor(public id?:number, public description?:string, public code?:string) {
@@ -29,6 +30,8 @@ class atributosDefecto {
 }
 
 
+
+
 class orderstable {
   constructor(public Letra?:string,public id?:number,public IdPedido?:number,public Descripcion?:string, public codigo?:string,public valor?:number ) {
   }
@@ -47,7 +50,6 @@ class set {
     ) {
   }
 }
-
 
 class next {
   constructor(
@@ -82,12 +84,24 @@ class next {
   }
 }
 
+interface Dibujo {
+  cod: string;
+  pos: number;
+  posPixel: number
+  
+}
+
 @Component({
   selector: 'app-newdefect',
   templateUrl: './newdefect.component.html',
   styleUrls: ['./newdefect.component.css']
 })
+
+
 export class NewdefectComponent implements OnInit {
+
+
+
 code:string;
 length:number;
 cycle:number;
@@ -120,9 +134,43 @@ atributos:atributosDefecto[]=[];
 
 requiredorders:orderstable[]=[];
 
-nuevaTabla = [];
-varIncrementada = [];
-pixelCSSDefecto = -200;
+listCodPosDefectos1 = [
+  { cod:"assets/imgPatterns/LI.gif", pos: 55, posPixel: -739 },
+
+
+];
+
+listaDefectosCodPos: Dibujo[] = [];
+contCod = 0;
+contPos = 0;
+listaIDsTipo: string[] = [
+  "nada",
+  "LI",
+  "LE",
+  "TI",
+  "TE",
+  "OI",
+  "OE",
+  "AFP",
+  "AP",
+  "REI",
+  "CH",
+  "PE",
+  "LE",
+  "ECA",
+  "OID",
+  "OED",
+  "REE",
+  "DN",
+  "ci",
+  "Center",
+  "CII",
+  "RE",
+  "ECA"
+]
+
+
+mostrarDefectos = false;
 
 IdDefecto;
 
@@ -145,38 +193,86 @@ letraglobal;
 UserOK;
 EliminarOK;
 
+objeto = { nombre: "hola", img: "assets/imgPatterns/AC.gif"}
+
 
 listasend:next[]=[];
 /////////////////////////////////////////////////////
   constructor(  private modalService: NgbModal,private router: Router, private globals: Globals, private httpClient: HttpClient) {
 
    }
-   DibujarDefecto() {
-    console.log("hola, varIncrementada: ", this.varIncrementada);
-    this.varIncrementada.push(5);
-    console.log("hola, varIncrementada: ", this.varIncrementada);
+
+  listCodPosDefectos1method() {
+    if (this.contCod == 0){
+      let a = "assets/imgPatterns/";
+      let b = this.listaIDsTipo[this.selectedValue_td];
+      let c = ".gif";
+      this.listCodPosDefectos1[this.contCod].cod = a.concat(b,c); 
+      this.contCod += 1;
+      this.listCodPosDefectos1[0].posPixel = this.calcularPixel( this.table[0].value);
+      this.contPos += 1;
+      
+    }
+    else {
+      this.listCodPosDefectos1.push({
+        cod: "ola",
+        pos: 1,
+        posPixel: 3
+      });
+        let a = "assets/imgPatterns/";
+        let b = this.listaIDsTipo[this.selectedValue_td];
+        let c = ".gif";
+        this.listCodPosDefectos1[this.contCod].cod = a.concat(b, c);
+        this.contCod += 1;
+        this.listCodPosDefectos1[this.contPos].posPixel = this.calcularPixel( this.table[0].value) ;
+        this.contPos += 1;
+    }
+  }
+
+  mostrarSelected() {
+    console.log( "selected:" , this.selectedValue_td);
+  }
+
+  cambiarbool() {
+    console.log("mostrarDefectos: ", this.mostrarDefectos);
+    
+    this.mostrarDefectos = true;
+    console.log("mostrarDEfectos: ", this.mostrarDefectos);
     
   }
-  RedondearNumero(  ){
-    console.log(Math.round(450000.144444 * 100) / 100)
+   mostrarLista() {
+     console.log("listado de defectos y pos: ", this.listCodPosDefectos1);
+     
+   }
+
+     calcularPixel( valor ) {
+        return this.RedondearNumero((valor * (760 / this.length )) - 740);
+     }
+  //  DibujarDefecto() {
+  //   this.PixelDeLongitud();
+  //   console.log("PixelDeLongitud() ejecutado, pixelCSSDefecto: ", this.pixelCSSDefecto);
+    
+  //   this.PixelDePosicion();
+  //   console.log("PixelDePosicion() ejecutado, posicionDelDefecto: ", this.posicionDelDefecto);
+  //   this.varIncrementada.push( [this.posicionDelDefecto, this.codigoImagen] ); //hago el push al final para que el ngFor barra con los datos
+  //   console.log("Varincrementada: ", this.varIncrementada);  
+  // }
+
+  // PixelDeLongitud( ) {
+  //   console.log(760 / this.longPatronRecibido);
+  //   this.pixelCSSDefecto  = 760 / this.longPatronRecibido;
+  // }
+  // PixelDePosicion( valor ){
+  //   this.posicionDelDefecto = (this.pixelCSSDefecto * this.posicionDelDefecto) - 740; 
+  // }
+
+
+  RedondearNumero( nro: number ){
+    return (Math.round( nro * 100) / 100)
   } //metodo para obtener un redondeo en milimetros del defecto del tubo
 
-  PixelDeLongitud( ) {
-    console.log(760 / 150000)
-    return(600/150000)
-  }
 
-  PixelDePosicion( ){
-    console.log( this.PixelDeLongitud() * 42000 );
-    
-  }
-
-  PixelDePosicionCSS( ) {
-    this.pixelCSSDefecto = -15;
-    console.log( this.pixelCSSDefecto );
-    
-  }
-
+  
 
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -395,6 +491,8 @@ var j=0;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   async ngOnInit() {
 
+    // console.log("hola");
+    
     this.typesdefects=[];    
     this.table=[];
     
@@ -413,6 +511,8 @@ if(recalque!=""){
 
 
 this.lista= JSON.parse(sessionStorage.getItem('lista'));
+console.log("Lista: ", this.lista);
+
 //alert(this.lista)
 
 this.code=this.lista[0].pattern_code;
@@ -459,7 +559,6 @@ console.log("value[0].tolerancia: ", value[0].unidad);
 
 this.vector.forEach(element => {
   this.table.push( new dinamictable(undefined,element.idAtributo,element.descripcion,element.tolerancia,element.unidad));
-  
 });
 console.log("table: ", this.table);
 });
@@ -529,14 +628,14 @@ var url1 = this.globals.baseUrl + '/DefectosPedidos/getDefects/'+this.IdPedido;
 
 await this.httpClient.get(url1).toPromise().then(value =>{
 this.vector=value;
-//console.log(this.vector)
+console.log( "awaitVector:" , this.vector)
 this.vector.forEach(element => {
   if(this.vector!=null){
     this.requiredorders.push( new orderstable(element.letra,element.id,element.idPedido,element.descripcion,element.codigo,element.valor)); 
-    console.log("requiredordersPush: ", this.requiredorders);
+    // console.log("requiredordersPush: ", this.requiredorders);
   }else{
     this.requiredorders.push( new orderstable("xxxx",66549,12784,"Oblicuo Izquierdo Interno","OI",2));
-    console.log("requiredordersPush2: ", this.requiredorders);
+    // console.log("requiredordersPush2: ", this.requiredorders);
   }
   });
  });
@@ -609,6 +708,8 @@ var url1 = this.globals.baseUrl + '/AtributosDefectos/geteffecttypeattributes/'+
 
 await this.httpClient.get(url1).toPromise().then(value =>{
 this.vector=value;
+console.log("await2: ", this.vector);
+
 
 this.vector.forEach(element => {
 this.table.push( new dinamictable(undefined,element.idAtributo,element.descripcion,element.tolerancia,element.unidad));
@@ -682,10 +783,6 @@ verify() {
 
   }  
 
-  MostrarDefectos(){
-    console.log("holaa");
-    
-  }
 //////////////////////////////////////////
  async ProcesarDefecto(event,elegido) { 
    
