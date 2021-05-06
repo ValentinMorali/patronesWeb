@@ -103,7 +103,7 @@
                         required 
                         [class.is-invalid]="neworder.get('client').invalid && neworder.get('client').touched " />
                         <small *ngIf="neworder.get('client').invalid && neworder.get('client').touched " class="text-danger" >
-                            * ingrese un cliente
+                            * ingrese cliente
                         </small>
 
                 </div>
@@ -132,7 +132,7 @@
                            [class.is-invalid]="neworder.get('auditor').invalid && neworder.get('auditor').touched" />
 
                            <small *ngIf="neworder.get('auditor').invalid && neworder.get('auditor').touched " class="text-danger" >
-                               * ingrese un auditor
+                               * ingrese auditor
                            </small>
                 </div>
             </div>
@@ -147,7 +147,7 @@
                            class="form-control" 
                            [class.is-invalid]="neworder.get('ot').invalid && neworder.get('ot').touched" />
                            <small *ngIf="neworder.get('ot').invalid && neworder.get('ot').touched " class="text-danger" >
-                            * ingrese un ot
+                            * ingrese ot
                            </small>
 
                 </div>
@@ -162,7 +162,7 @@
                     <OPTION VALUE="1">NO</OPTION>
                   </select>
                   <small *ngIf="neworder.get('acoustic_response').invalid && neworder.get('acoustic_response').touched " class="text-danger" >
-                    * ingrese una respuesta acustica
+                    * ingrese respuesta acústica
                    </small>
 
                 </div>
@@ -193,7 +193,11 @@
 
             <div class="form-row" style="padding:0;margin:0">
                 <div class="form-group col" style="margin:0">
-                    <input type="checkbox" formControlName="virgin_tube" id="acceptTerms" class="" (click)="changevirgin()" />
+                    <input type="checkbox" 
+                           formControlName="virgin_tube" 
+                           id="acceptTerms" 
+                           class="" 
+                           (click)="changevirgin()" />
                     <label style="padding:0;margin:5px">A partir de un tubo virgen</label>
 
                 </div>
@@ -220,23 +224,52 @@
             <div class="form-row" style="padding:0;margin:0" *ngIf="isvirgin">
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">Diámetro [mm]</label>
-                    <input type="text" formControlName="diam" class="form-control" [(ngModel)]="diamvalue" (change)="checknum(1)" />
+                    <input type="number" 
+                           formControlName="diam" 
+                           class="form-control" 
+                           [(ngModel)]="diamvalue" 
+                           (change)="checknum(1)"
+                           [class.is-invalid]="neworder.get('diam').invalid && neworder.get('diam').touched" />
+                    <small *ngIf="neworder.get('diam').invalid && neworder.get('diam').touched " class="text-danger" >
+                            * ingrese diámetro
+                    </small>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Grado</label>
-                    <input type="text" formControlName="degree" class="form-control"/>
+                    <input type="text" 
+                           formControlName="degree" 
+                           class="form-control"
+                           [class.is-invalid]="neworder.get('degree').invalid && neworder.get('degree').touched"/>
+                    <small *ngIf="neworder.get('degree').invalid && neworder.get('degree').touched " class="text-danger" >
+                            * ingrese grado
+                    </small>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Ciclo</label>
-                    <input type="number" [style.background-color]="cyclecolor" [(ngModel)]="cyclevalue" formControlName="cycle" class="form-control" (change)="checknum(2)"/>
+                    <input type="number" 
+                            [style.background-color]="cyclecolor" 
+                            [(ngModel)]="cyclevalue" 
+                            formControlName="cycle" 
+                            class="form-control" 
+                            (change)="checknum(2)"
+                            [class.is-invalid]="neworder.get('cycle').invalid && neworder.get('cycle').touched"/>
+                    <small *ngIf="neworder.get('cycle').invalid && neworder.get('cycle').touched " class="text-danger" >
+                                * ingrese ciclo
+                    </small>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
 
                     <!-- <button type="submit" class="btn btn-outline-primary" style='width:100px; height:40px' value="broker" id="brokerboton" (click)="broker()">Broker</button> -->
-                    <button type="submit" class='fa fa-bolt' style='width:50px; height:40px' value="broker" id="brokerboton" (click)="broker()"></button>
+                    <button type="submit" 
+                            class='fa fa-bolt' 
+                            style='width:50px; height:40px' 
+                            value="broker" 
+                            id="brokerboton" 
+                            (click)="broker()">
+                    </button>
 
                 </div>
 
@@ -248,18 +281,39 @@
             <div class="form-row" style="padding:0;margin:0" *ngIf="isvirgin">
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">Espesor [mm]</label>
-                    <input type="text" formControlName="thickness" class="form-control" [(ngModel)]="thicknessvalue" (change)="checknum(3)"/>
+                    <input type="number" 
+                           formControlName="thickness" 
+                           class="form-control" 
+                           [(ngModel)]="thicknessvalue" 
+                           (change)="checknum(3)"
+                           [class.is-invalid]="neworder.get('thickness').invalid && neworder.get('thickness').touched"/>
+                    <small *ngIf="neworder.get('thickness').invalid && neworder.get('thickness').touched " class="text-danger" >
+                            * ingrese espesor
+                    </small>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Acero</label>
-                    <input type="text" formControlName="steel" class="form-control"/>
+                    <input type="text" 
+                           formControlName="steel" 
+                           class="form-control"
+                           [class.is-invalid]="neworder.get('steel').invalid && neworder.get('steel').touched"/>
+                    <small *ngIf="neworder.get('steel').invalid && neworder.get('steel').touched " class="text-danger" >
+                            * ingrese acero
+                    </small>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Colada</label>
-                    <input [style.background-color]="steel_castingcolor" type="text" [(ngModel)]="steel_castingvalue" formControlName="steel_casting" (change)="checknum(4)" class="form-control"/>
-                </div>
+                    <input [style.background-color]="steel_castingcolor" 
+                           type="number" 
+                           [(ngModel)]="steel_castingvalue" 
+                           formControlName="steel_casting" (change)="checknum(4)" class="form-control"
+                           [class.is-invalid]="neworder.get('steel_casting').invalid && neworder.get('steel_casting').touched"/>
+                    <small *ngIf="neworder.get('steel_casting').invalid && neworder.get('steel_casting').touched " class="text-danger" >
+                            * ingrese colada (20000 - 90000)
+                    </small>
+                        </div>
 
             </div>
 
@@ -270,21 +324,43 @@
             <div class="form-row" style="padding:0;margin:0" *ngIf="isvirgin">
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">Longitud [mm]</label>
-                    <input [style.background-color]="lengthcolor" type="text" [(ngModel)]="lengthvalue" formControlName="length" value=0 class="form-control" (change)="checknum(5)"/>
+                    <input [style.background-color]="lengthcolor" 
+                           type="number" 
+                           [(ngModel)]="lengthvalue" 
+                           formControlName="length" 
+                           value=0 
+                           class="form-control" 
+                           (change)="checknum(5)"
+                           [class.is-invalid]="neworder.get('length').invalid && neworder.get('length').touched"/>
+                    <small *ngIf="neworder.get('length').invalid && neworder.get('length').touched " class="text-danger" >
+                            * ingrese longitud (1500 - 9000)
+                    </small>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Trat. Térmico</label>
 
-            <select [style.background-color]="heat_treatmentcolor" formControlName="heat_treatment" class="form-control">
+            <select [style.background-color]="heat_treatmentcolor" 
+                    formControlName="heat_treatment" 
+                    class="form-control"
+                    [class.is-invalid]="neworder.get('heat_treatment').invalid && neworder.get('heat_treatment').touched">
               <OPTION VALUE="0">SI</OPTION>
               <OPTION VALUE="1">NO</OPTION>
             </select>
+            <small *ngIf="neworder.get('heat_treatment').invalid && neworder.get('heat_treatment').touched " class="text-danger" >
+                * ingrese trat. térmico
+            </small>
                 </div>
 
                 <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
                     <label style="padding:0;margin:0">Expediente</label>
-                    <input type="text" formControlName="record" class="form-control"/>
+                    <input type="text" 
+                           formControlName="record" 
+                           class="form-control"
+                           [class.is-invalid]="neworder.get('record').invalid && neworder.get('record').touched"/>
+                    <small *ngIf="neworder.get('record').invalid && neworder.get('record').touched " class="text-danger" >
+                            * ingrese expediente
+                    </small>
                 </div>
 
             </div>
@@ -294,7 +370,13 @@
             <div class="form-row" style="padding:0;margin:0" *ngIf="isvirgin">
                 <div class="form-group col-3" style="margin:0">
                     <label style="padding:0;margin:0">Nro. Traceability-BME</label>
-                    <input type="number" formControlName="num_trac_bme" value=0 class="form-control" />
+                    <input type="number" 
+                           formControlName="num_trac_bme" 
+                           value=0 
+                           class="form-control"/>
+                           <small *ngIf="neworder.get('thickness').invalid && neworder.get('thickness').touched " class="text-danger" >
+                            * ingrese un espesor
+                    </small>        
                 </div>
 
             </div>
@@ -306,7 +388,11 @@
 
             <div class="form-row" *ngIf="updateview" style="padding:0;margin:0">
                 <div class="form-group col" style="margin:0">
-                    <input type="checkbox" formControlName="existing_tube" id="acceptTerms2" (click)="changeexisting()" class="" />
+                    <input type="checkbox" 
+                           formControlName="existing_tube" 
+                           id="acceptTerms2" 
+                           (click)="changeexisting()" 
+                           class="" />
                     <label style="padding:0;margin:5px">A partir de un patrón existente</label>
                 </div>
 
@@ -317,7 +403,10 @@
             <div class="form-row" style="padding:0;margin:0" *ngIf="isexisting">
                 <div class="form-group col-3">
                     <label style="padding:0;margin:0">Código del patrón</label>
-                    <input type="text" [ngModel]="pattern_code" formControlName="pattern_code" class="form-control" />
+                    <input type="text" 
+                           [ngModel]="pattern_code" 
+                           formControlName="pattern_code" 
+                           class="form-control" />
                 </div>
 
             </div>

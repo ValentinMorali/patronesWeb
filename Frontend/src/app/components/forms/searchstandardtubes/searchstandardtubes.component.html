@@ -29,9 +29,18 @@
             <div class="form-row" style="padding:0;margin:0">
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0"> Diámetro[mm]</label>
-                    <input type="number" placeholder="Ingrese un nro" formControlName="diam" class="form-control" [(ngModel)]="diamvalue" (change)="Verificarnum(1)" />
-                    <!-- con la Expr regular pattern="[0-9]+" se filtran numeros del input -->
-                </div>
+                    <input type="number" 
+                           placeholder="Ingrese un nro" 
+                           formControlName="diam" 
+                           class="form-control" 
+                           [class.is-invalid]="search.get('diam').invalid"
+                           />
+                           <small *ngIf="search.get('diam').invalid" class="text-danger" >
+                               * debe valer entre 1500 y 9000
+                            </small>
+                        </div>
+                        <!-- con la Expr regular pattern="[0-9]+" se filtran numeros del input -->
+                        <!-- [(ngModel)]="diamvalue" (change)="Verificarnum(1)"  esta linea iba arriba del div/> -->
 
                 <!-- <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Tol(%)</label>
@@ -40,7 +49,16 @@
 
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Tol(%)</label>
-                    <input type="text" formControlName="tol1" class="form-control" minlength="0" maxlength="2"/>
+                    <input type="text" 
+                           formControlName="tol1" 
+                           class="form-control" 
+                           minlength="0" 
+                           maxlength="2"
+                           [class.is-invalid]="search.get('tol1').invalid" class="text-danger"
+                           />
+                    <small *ngIf="search.get('tol1').invalid">
+                        * debe valer entre 0 y 100
+                    </small>
                 </div>
 
 
@@ -52,7 +70,11 @@
 
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Ciclo</label>
-                    <input type="number" formControlName="cycle" class="form-control" [(ngModel)]="cyclevalue" (change)="Verificarnum(3)" />
+                    <input type="number" 
+                           formControlName="cycle" 
+                           class="form-control" 
+                           [(ngModel)]="cyclevalue" 
+                           (change)="Verificarnum(3)" />
                 </div>
 
             </div>
@@ -71,18 +93,38 @@
 
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Tol(%)</label>
-                    <input type="text" formControlName="tol2" class="form-control" minlength="0" maxlength="2"/>
+                    <input type="text" 
+                           formControlName="tol2" 
+                           class="form-control" 
+                           minlength="0" 
+                           maxlength="2"
+                           [class.is-invalid]="search.get('tol2').invalid" class="text-danger"
+                           />
+                    <small *ngIf="search.get('tol2').invalid">
+                        * debe valer entre 0 y 100
+                    </small>
                 </div>
 
-                <div class="form-group col-4" style="margin:0">
+                <div class="form-group col-4" style="margin:0;">
                     <label style="padding:0;margin:0">Grado</label>
-                    <input type="text" formControlName="degree" class="form-control" />
+                    <input type="number" 
+                           formControlName="degree" 
+                           class="form-control" />
                 </div>
 
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Colada</label>
-                    <input type="number" formControlName="steel_casting" class="form-control" [(ngModel)]="steel_castingvalue" (change)="Verificarnum(4)" />
-                </div>
+                    <input type="number" 
+                           formControlName="steel_casting" 
+                           class="form-control" 
+                           [class.is-invalid]="search.get('steel_casting').invalid"
+                           />
+                    <small *ngIf="search.get('steel_casting').invalid" class="text-danger" >
+                        * debe valer entre 20000 y 90000
+                    </small>
+                        </div>
+                        <!-- [(ngModel)]="steel_castingvalue"  iba arriba del div-->
+                        <!-- (change)="Verificarnum(4)" /> iba arriba del div -->
 
             </div>
 
@@ -91,7 +133,12 @@
             <div class="form-row" style="padding:0;margin:0">
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0"> Longitud[mm]</label>
-                    <input type="number" placeholder="Ingrese un nro" formControlName="length" class="form-control" [(ngModel)]="lengthvalue" (change)="Verificarnum(5)" />
+                    <input type="number" 
+                           placeholder="Ingrese un nro" 
+                           formControlName="length" 
+                           class="form-control" 
+                           [(ngModel)]="lengthvalue" 
+                           (change)="Verificarnum(5)" />
                 </div>
 
                 <!-- <div class="form-group col-2" style="margin:0">
@@ -101,7 +148,14 @@
 
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Tol(%)</label>
-                    <input type="text" formControlName="tol3" class="form-control" minlength="0" maxlength="2"/>
+                    <input type="text" 
+                           formControlName="tol3" 
+                           class="form-control"
+                           [class.is-invalid]="search.get('tol3').invalid"
+                           />
+                    <small *ngIf="search.get('tol3').invalid" class="text-danger">
+                        * debe valer entre 0 y 100
+                    </small>
                 </div>
 
 
@@ -138,7 +192,10 @@
 
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Expediente</label>
-                    <input type="text" placeholder="Escriba aqui" formControlName="record" class="form-control" />
+                    <input type="text" 
+                          placeholder="Escriba aqui" 
+                          formControlName="record" 
+                          class="form-control" />
                 </div>
 
             </div>
@@ -169,12 +226,16 @@
 
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Usuario</label>
-                    <input type="text" formControlName="user" class="form-control" />
+                    <input type="text" 
+                           formControlName="user" 
+                           class="form-control" />
                 </div>
 
                 <div class="form-group col-2" style="margin:0">
                     <label style="padding:0;margin:0">Cliente</label>
-                    <input type="text" formControlName="client" class="form-control" />
+                    <input type="text" 
+                           formControlName="client" 
+                           class="form-control" />
                 </div>
 
             </div>
@@ -192,11 +253,16 @@
 
                 <div class="form-group col-4">
                     <label style="padding:0;margin:0"> Ubicación en la línea</label>
-                    <input type="text" formControlName="location_details" class="form-control" />
+                    <input type="text" 
+                           formControlName="location_details" 
+                           class="form-control" />
                 </div>
 
                 <div class="form-group col-6">
-                    <input type="submit" class="btn btn-outline-primary" value="Buscar" (click)="llamar()"> &nbsp;
+                    <input type="submit" 
+                           class="btn btn-outline-primary" 
+                           value="Buscar" 
+                           (click)="llamar()"> &nbsp;
                 </div>
 
 

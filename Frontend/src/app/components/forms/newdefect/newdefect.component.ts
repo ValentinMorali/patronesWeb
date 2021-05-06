@@ -141,6 +141,7 @@ listCodPosDefectos1 = [
 ];
 
 listaDefectosCodPos: Dibujo[] = [];
+maximo = 500;
 contCod = 0;
 contPos = 0;
 listaIDsTipo: string[] = [
@@ -248,6 +249,7 @@ listasend:next[]=[];
      calcularPixel( valor ) {
         return this.RedondearNumero((valor * (760 / this.length )) - 740);
      }
+
   //  DibujarDefecto() {
   //   this.PixelDeLongitud();
   //   console.log("PixelDeLongitud() ejecutado, pixelCSSDefecto: ", this.pixelCSSDefecto);
